@@ -11,18 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
-
-if os.path.exists('env.py'):
-    import env
-
-CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
-}
-
-MEDIA_URL = '/media/'
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +25,8 @@ SECRET_KEY = 'django-insecure-ezci9*x#zagj(qnmr=lo_7kii+^(j#ligyh^1$ka_jvz*bgaub
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '8000-mandyhole-drive-data-f31ceeakmf.us2.codeanyapp.com', 'localhost']
 
 
 # Application definition
