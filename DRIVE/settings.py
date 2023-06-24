@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ezci9*x#zagj(qnmr=lo_7kii+^(j#ligyh^1$ka_jvz*bgaub
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-mandyhole-drive-data-f31ceeakmf.us2.codeanyapp.com', 'localhost']
+    '8000-mandyhole-drivedata-h35cbtf8dw4.ws-eu100.gitpod.io', 'localhost']
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'rest_framework',
+    'authors'
 ]
 
 MIDDLEWARE = [
