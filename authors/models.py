@@ -10,9 +10,12 @@ class TipAuthor(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=True)
     bio = models.TextField(blank=True)
+    email = models.EmailField(max_length=254, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    privacy_preference = models.BooleanField(default=False)
+    privacy_preference = models.BooleanField(
+        default=False,
+        verbose_name="Would you like your email address to be publicly available?")
     image = models.ImageField(
         upload_to='GetDriveing/',
         default='../blank-profile-picture-gb6ded336d_640_xyxqab.png')
