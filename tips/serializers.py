@@ -4,8 +4,15 @@ from .models import Tip
 class TipSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    author_id = serializers.ReadOnlyField(source='owner.author.id')
-    profile_image = serializers.ReadOnlyField(source='owner.author.image.url')
+    owner_id = serializers.ReadOnlyField(source='owner.id')
+    owner_image = serializers.ReadOnlyField(source='owner.tipauthor.image.url')
+
+    def validate_screenshot(self, value):
+        if value.size > 1024 * 1024:
+            raise serializers.ValidationError(
+                "Image size is greater than 1 MB"
+            )
+        return value
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -15,7 +22,7 @@ class TipSerializer(serializers.ModelSerializer):
         model = Tip
         fields = [
             'id', 
-            'author', 
+            'owner', 
             'title', 
             'tip_content', 
             'created_on', 
@@ -23,5 +30,7 @@ class TipSerializer(serializers.ModelSerializer):
             'screenshot', 
             'category', 
             'is_owner', 
-            'ability'
+            'ability',
+            'owner_image',
+            'owner_id',
         ]

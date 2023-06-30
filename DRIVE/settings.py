@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ezci9*x#zagj(qnmr=lo_7kii+^(j#ligyh^1$ka_jvz*bgaub
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-mandyhole-drivedata-h35cbtf8dw4.ws-eu100.gitpod.io', 'localhost']
+    '8000-mandyhole-drivedata-h35cbtf8dw4.ws-eu101.gitpod.io', 'localhost']
 
 
 # Application definition
