@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions
-from DRIVE.permissions import IsOwnerOrReadOnly
+from drive_api.permissions import IsOwnerOrReadOnly
 from .models import SavedTip
 from .serializers import SavedTipSerializer
 

@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import TipAuthor
+from .models import Author
 
-class TipAuthorSerializer(serializers.ModelSerializer):
+class AuthorSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     number_tips_created = serializers.ReadOnlyField()
@@ -11,8 +11,8 @@ class TipAuthorSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = TipAuthor
+        model = Author
         fields = [
-            'id', 'owner', 'name', 'bio', 'email', 'created_on', 'updated_on', 'privacy_preference', 'image', 'is_owner', 'number_tips_created'
+            'id', 'owner', 'name', 'bio', 'created_on', 'updated_on', 'image', 'is_owner', 'number_tips_created'
         ]
 

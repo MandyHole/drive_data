@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Tip
 from .serializers import TipSerializer
-from DRIVE.permissions import IsOwnerOrReadOnly
+from drive_api.permissions import IsOwnerOrReadOnly
 
 
 # Create your views here.

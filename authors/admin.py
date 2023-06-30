@@ -1,13 +1,13 @@
 from django.contrib import admin
-from .models import TipAuthor
+from .models import Author
 
-# admin.site.register(TipAuthor)
+# admin.site.register(Author)
 
 # Register your models here.
 
 
-@admin.register(TipAuthor)
-class TipAuthorAdmin(admin.ModelAdmin):
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
     list_display = (
         'owner',
         'name',
