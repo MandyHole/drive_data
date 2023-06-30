@@ -10,7 +10,6 @@ class TipAuthor(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=True)
     bio = models.TextField(blank=True)
-    email = models.EmailField(max_length=254, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     privacy_preference = models.BooleanField(

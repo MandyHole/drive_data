@@ -4,6 +4,7 @@ from .models import TipAuthor
 class TipAuthorSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
+    number_tips_created = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -12,6 +13,6 @@ class TipAuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = TipAuthor
         fields = [
-            'id', 'owner', 'name', 'bio', 'email', 'created_on', 'updated_on', 'privacy_preference', 'image', 'is_owner'
+            'id', 'owner', 'name', 'bio', 'email', 'created_on', 'updated_on', 'privacy_preference', 'image', 'is_owner', 'number_tips_created'
         ]
 
