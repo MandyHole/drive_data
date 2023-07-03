@@ -17,6 +17,7 @@ class AuthorList(generics.ListAPIView):
     """
     queryset = Author.objects.annotate(
         number_tips_created = Count('owner__tip', distinct=True),
+        number_tips_saved = Count('owner__savedtip', distinct=True)
     ).order_by('-created_on')
     serializer_class = AuthorSerializer
     filter_backends = [
@@ -25,6 +26,7 @@ class AuthorList(generics.ListAPIView):
     ordering_fields = [
         'number_tips_created',
         'created_on',
+        'number_tips_saved'
     ]
 
 

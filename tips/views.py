@@ -6,6 +6,9 @@ from rest_framework.views import APIView
 from .models import Tip
 from .serializers import TipSerializer
 from drive_api.permissions import IsOwnerOrReadOnly
+from rating.models import Rating
+from django.db.models import Avg, Count
+from saved_tips.models import SavedTip
 
 
 # Create your views here.
@@ -14,7 +17,17 @@ class TipList(generics.ListCreateAPIView):
     List all tips
     Can create a new tip if logged in
     """
-    queryset = Tip.objects.all()
+    queryset = Tip.objects.annotate(
+        average_rating=Avg('rating__tip_rating'),
+        number_times_saved = Count('author_saved_tip', distinct=True),
+    ).order_by('-created_on')
+    filter_backends = [
+        filters.OrderingFilter]
+    ordering_fields = [
+        'average_rating',
+        'owner',
+        'ability'
+    ]
     serializer_class = TipSerializer
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
