@@ -12,6 +12,7 @@ class RatingSerializer(serializers.ModelSerializer):
             'id', 
             'owner', 
             'created_at',
+            'updated_at',
             'tip_rating',
             'tip'
         ]
