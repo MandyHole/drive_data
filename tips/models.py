@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Tip(models.Model):
     ABILITY_LEVEL = [
         ('beginner', 'Beginner+'),
@@ -37,7 +38,7 @@ class Tip(models.Model):
         choices=ABILITY_LEVEL,
         verbose_name="Recommended ability level"
         )
-    
+
     class Meta:
         ordering = ['-created_on']
 

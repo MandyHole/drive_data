@@ -13,6 +13,8 @@ from saved_tips.models import SavedTip
 
 
 # Create your views here.
+
+
 class TipList(generics.ListCreateAPIView):
     """
     List all tips
@@ -20,7 +22,7 @@ class TipList(generics.ListCreateAPIView):
     """
     queryset = Tip.objects.annotate(
         average_rating=Avg('rating__tip_rating'),
-        number_times_saved = Count('author_saved_tip', distinct=True),
+        number_times_saved=Count('author_saved_tip', distinct=True),
     ).order_by('-created_on')
     filter_backends = [
         filters.OrderingFilter,
@@ -45,7 +47,8 @@ class TipList(generics.ListCreateAPIView):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
-    def perform_create (self, serializer):
+
+    def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
@@ -57,6 +60,6 @@ class TipDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Tip.objects.annotate(
         average_rating=Avg('rating__tip_rating'),
-        number_times_saved = Count('author_saved_tip', distinct=True),
+        number_times_saved=Count('author_saved_tip', distinct=True),
     ).order_by('-created_on')
     serializer_class = TipSerializer

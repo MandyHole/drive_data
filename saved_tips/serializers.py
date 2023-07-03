@@ -9,12 +9,12 @@ class SavedTipSerializer(serializers.ModelSerializer):
     class Meta:
         model = SavedTip
         fields = [
-            'id', 
-            'owner', 
+            'id',
+            'owner',
             'created_at',
             'tip'
         ]
-    
+
     def create(self, validated_data):
         try:
             return super().create(validated_data)

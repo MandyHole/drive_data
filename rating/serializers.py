@@ -9,14 +9,14 @@ class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
         fields = [
-            'id', 
-            'owner', 
+            'id',
+            'owner',
             'created_at',
             'updated_at',
             'tip_rating',
             'tip'
         ]
-    
+
     def create(self, validated_data):
         try:
             return super().create(validated_data)

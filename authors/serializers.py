@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Author
 
+
 class AuthorSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -14,6 +15,14 @@ class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
         fields = [
-            'id', 'owner', 'name', 'bio', 'created_on', 'updated_on', 'image', 'is_owner', 'number_tips_created', 'number_tips_saved'
+            'id',
+            'owner',
+            'name',
+            'bio',
+            'created_on',
+            'updated_on',
+            'image',
+            'is_owner',
+            'number_tips_created',
+            'number_tips_saved'
         ]
-

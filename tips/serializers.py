@@ -3,6 +3,7 @@ from .models import Tip
 from saved_tips.models import SavedTip
 from rating.models import Rating
 
+
 class TipSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -20,7 +21,6 @@ class TipSerializer(serializers.ModelSerializer):
             ).first()
             return saved.id if saved else None
         return None
-    
 
     def validate_screenshot(self, value):
         if value.size > 1024 * 1024:
@@ -36,18 +36,18 @@ class TipSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tip
         fields = [
-            'id', 
-            'owner', 
+            'id',
+            'owner',
             'owner_id',
             'owner_image',
-            'is_owner', 
-            'title', 
-            'tip_content', 
-            'category', 
+            'is_owner',
+            'title',
+            'tip_content',
+            'category',
             'ability',
-            'screenshot', 
-            'created_on', 
-            'updated_on', 
+            'screenshot',
+            'created_on',
+            'updated_on',
             'saved_tips_id',
             'average_rating',
             'number_times_saved'

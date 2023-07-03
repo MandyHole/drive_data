@@ -10,14 +10,15 @@ from drive_api.permissions import IsOwnerOrReadOnly
 
 # Create your views here.
 
+
 class AuthorList(generics.ListAPIView):
     """
-    Lists all authors. 
+    Lists all authors.
     No create (auto creation when user created)
     """
     queryset = Author.objects.annotate(
-        number_tips_created = Count('owner__tip', distinct=True),
-        number_tips_saved = Count('owner__savedtip', distinct=True)
+        number_tips_created=Count('owner__tip', distinct=True),
+        number_tips_saved=Count('owner__savedtip', distinct=True)
     ).order_by('-created_on')
     serializer_class = AuthorSerializer
     filter_backends = [
@@ -38,5 +39,5 @@ class AuthorDetail(generics.RetrieveUpdateAPIView):
     serializer_class = AuthorSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Author.objects.annotate(
-        number_tips_created = Count('owner__tip', distinct=True),
+        number_tips_created=Count('owner__tip', distinct=True),
     ).order_by('-created_on')
