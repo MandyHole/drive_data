@@ -44,7 +44,8 @@ class TipList(generics.ListCreateAPIView):
         'average_rating',
         'owner',
         'ability',
-        'category'
+        'category',
+        'number_times_saved'
     ]
     serializer_class = TipSerializer
     permission_classes = [

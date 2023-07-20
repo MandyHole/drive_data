@@ -12,10 +12,22 @@ Link to deployed database: <a href="https://getdriveing-6933e088a46d.herokuapp.c
 GetDriveing Github Repository (see that ReadMe for more details about this project): <a href="https://github.com/MandyHole/getdriveing" target="new" aria-label=" GetDriveing GitHub Repository">https://github.com/MandyHole/getdriveing</a> 
 
 
-<h2 id="languages">Languages & frameworks Used</h3>
+<h2 id="languages">Languages & frameworks Used</h2>
 <ul>
 <li>Python</li>
 <li><strong>Django Rest Framework</strong>to compile json data for the frontend website</li>
+</ul>
+
+<h2> Testing </h2>
+<p id="python"><strong>Python:</strong> Tested the pages I created/used with Pycode Style (no errors found). See steps below:</p>
+<ul><li>In the terminal, check you have pycodestyle installed by running: pip install pycodestyle</li>
+<li>In the terminal, run pycodestyle *ADD RELATIVE FILE/FOLDER PATH HERE* for each of the pages you wish to check until no errors are found (see examples below). NB there were issues with line length in the automatically generated migration files and in the default settings (drive_api/settings.py).</li><ul>
+<li>pycodestyle authors</li>
+<li>pycodestyle comments</li>
+<li>pycodestyle drive_api</li>
+<li>pycodestyle saved_tips</li>
+<li>pycodestyle tips</li>
+</ul>
 </ul>
 
 <h2 id="deploy"> Deployment & Local Development</h2>
