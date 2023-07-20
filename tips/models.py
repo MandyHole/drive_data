@@ -18,23 +18,24 @@ class Tip(models.Model):
         ('forms', 'Forms'),
     ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=100, blank=True)
-    tip_content = models.TextField(blank=True)
+    title = models.CharField(max_length=100, blank=False)
+    tip_content = models.TextField(blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     screenshot = models.ImageField(
         upload_to='GetDriveing/',
         verbose_name="Upload a screenshot if applicable",
+        default='../screenshot-default.jpg',
         blank=True)
     category = models.CharField(
         max_length=32,
         choices=TIP_CATEGORY,
-        default='sheets',
+        blank=False,
         verbose_name="Primary category of tip"
         )
     ability = models.CharField(
         max_length=32,
-        default='beginner',
+        blank=False,
         choices=ABILITY_LEVEL,
         verbose_name="Recommended ability level"
         )

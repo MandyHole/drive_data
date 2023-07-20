@@ -7,7 +7,7 @@ class CommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     owner_id = serializers.ReadOnlyField(source='owner.id')
-    owner_image = serializers.ReadOnlyField(source='owner.tipauthor.image.url')
+    owner_image = serializers.ReadOnlyField(source='owner.author.image.url')
     created_at = serializers.SerializerMethodField()
     updated_at = serializers.SerializerMethodField()
 
