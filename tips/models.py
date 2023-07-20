@@ -25,7 +25,7 @@ class Tip(models.Model):
     screenshot = models.ImageField(
         upload_to='GetDriveing/',
         verbose_name="Upload a screenshot if applicable",
-        default='../screenshot-default.jpg',
+        default='../screenshot-default_gbgobl.jpg'
         blank=True)
     category = models.CharField(
         max_length=32,
