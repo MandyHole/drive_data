@@ -12,7 +12,7 @@ class TipSerializer(serializers.ModelSerializer):
     saved_tips_id = serializers.SerializerMethodField()
     average_rating = serializers.ReadOnlyField()
     number_times_saved = serializers.ReadOnlyField()
-    ratiing_id = serializers.SerializerMethodField()
+    rating_id = serializers.SerializerMethodField()
 
     def get_saved_tips_id(self, obj):
         user = self.context['request'].user
@@ -29,7 +29,7 @@ class TipSerializer(serializers.ModelSerializer):
             rating = Rating.objects.filter(
                 owner=user, tip=obj
             ).first()
-            return rating.id if saved else None
+            return rating.id if rating else None
         return None
 
     def validate_screenshot(self, value):
@@ -60,5 +60,6 @@ class TipSerializer(serializers.ModelSerializer):
             'updated_on',
             'saved_tips_id',
             'average_rating',
-            'number_times_saved'
+            'number_times_saved',
+            'rating_id'
         ]
