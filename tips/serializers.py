@@ -53,7 +53,6 @@ class TipSerializer(serializers.ModelSerializer):
             'id',
             'owner',
             'owner_id',
-            'owner_image',
             'is_owner',
             'title',
             'tip_content',

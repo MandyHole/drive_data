@@ -11,6 +11,10 @@ Link to deployed database: <a href="https://getdriveing-6933e088a46d.herokuapp.c
 
 GetDriveing Github Repository (see that ReadMe for more details about this project): <a href="https://github.com/MandyHole/getdriveing" target="new" aria-label=" GetDriveing GitHub Repository">https://github.com/MandyHole/getdriveing</a> 
 
+## Model Set Up
+<ul>
+<li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1689634279/Models_stt0lf.png" aria-label="a mockup of the Database models relationship" target="new">Mockup of database models relationship</a> </li>
+<li><a href="https://res.cloudinary.com/dd4cchm7g/image/upload/v1689634288/crud_sfem7l.png" aria-label="a mockup of CRUD functionality" target="new">Mockup of CRUD functionality</a> </li></ul>
 
 <h2 id="languages">Languages & frameworks Used</h2>
 <ul>
