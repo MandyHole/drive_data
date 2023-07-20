@@ -36,6 +36,7 @@ class TipList(generics.ListCreateAPIView):
     filterset_fields = [
         'owner__author',
         'author_saved_tip__owner__author',
+        'rating_id__'
         ]
     ordering_fields = [
         'average_rating',

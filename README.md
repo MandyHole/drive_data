@@ -1,39 +1,55 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Get Driveing API
 
-Welcome,
+This is the accompanying database to go with my frontend website created with React (GetDriveing). GetDriveing pulls the json data from this django rest framework and manipulates it to provide CRUD functionality to the user.
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Get Driveing Frontend website screenshot:
+<img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1689448397/Screenshot_2023-07-15_at_20.12.59_w3qytx.png" width = 15% alt="GetDriveing Logo"></a>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+Link to deployed site: <a href="https://get-drive-ing-36f2443ac236.herokuapp.com/" target="new" aria-label="Deployed GetDriveing website">https://get-drive-ing-36f2443ac236.herokuapp.com/</a>
 
-## Codeanywhere Reminders
+Link to deployed database: <a href="https://getdriveing-6933e088a46d.herokuapp.com/" target="new" aria-label="Deployed GetDriveing website">https://getdriveing-6933e088a46d.herokuapp.com/</a> 
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+GetDriveing Github Repository (see that ReadMe for more details about this project): <a href="https://github.com/MandyHole/getdriveing" target="new" aria-label=" GetDriveing GitHub Repository">https://github.com/MandyHole/getdriveing</a> 
 
-`python3 -m http.server`
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+<h2 id="languages">Languages & frameworks Used</h3>
+<ul>
+<li>Python</li>
+<li><strong>Django Rest Framework</strong>to compile json data for the frontend website</li>
+</ul>
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+<h2 id="deploy"> Deployment & Local Development</h2>
 
-`http_server`
+<h3 id="deployment">Deployment</h3>
+This project was deployed through Heroku (live link found here: <a href="https://getdriveing-6933e088a46d.herokuapp.com/" target="new" aria-label="Deployed site">https://getdriveing-6933e088a46d.herokuapp.com/)</a> using the following steps:
+<ol>
+<li>Login / Sign up to Heroku</li>
+<li>Click New -- Create New App</li>
+<li>Name your app (must be unique), select your nearest region and click “Create app” to confirm.</li>
+<li>Go to settings and add the following Key/Data information (which match the information in your env.py file that should be set up to be ignored by git), to the config vars:<ul>
+<li>ALLOWED_HOST (for example getdriveing-6933e088a46d.herokuapp.com)
+<li>CLIENT_ORIGIN (link to your deployed frontend website, eg: https://get-drive-ing-36f2443ac236.herokuapp.com)
+<li>CLIENT_ORIGIN_DEV (link to your frontend website's local development - this may change so you may need to update it if it stops working)</>
+<li>DATABASE_URL (from your database, eg elephant sql)</li>
+<li>SECRET_KEY</li>
+<li>CLOUDINARY_URL (from your Cloudinary account)</li>
+<li>DISABLE_COLLECTSTATIC (1) if you haven't added static files yet. NB This can be removed once you deploy your site</li>
+</ul></li>
+<li>Add your Heroku app and local host to the 'Allowed Hosts' section of the settings.py file (example below)<ul><li>ALLOWED_HOSTS = [
+    'localhost',
+    os.environ.get('ALLOWED_HOST'),
+    ]
+</li></ul></li>
+<li>Create a Profile in the main directory with the following info:  release: python manage.py makemigrations && python manage.py migrate
+ web: gunicorn drive_api.wsgi where 'drive-api' is the name of your project</li>
+<li>Add/Commit/Push all changes to Github</li>
+<li>Click Deploy in the Heroku App dashboard - then deploy via Github - connect to the repository, scroll down and click on deploy branch</li>
+</ol>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+<h3 id="fork">How to fork this repo</h3>
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+Visit the repo (https://github.com/MandyHole/school-clubs) and click the 'Fork' button in the top right part of the screen. You may need to sign in to Github.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<h3 id="clone">How to clone this repo</h3>
 
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+Visit the repo (https://github.com/MandyHole/school-clubs) and click the green 'Code' button above the list of files. Click on the 'local' and select from the following options: HTTPS, SSH and GitHub CLI. Copy the link. Open the terminal in your code editor, ensuring the current working directory is where you want the files, and type git clone and paste in the copied URL before clicking enter.

@@ -19,7 +19,9 @@ class RatingSerializer(serializers.ModelSerializer):
             'created_at',
             'updated_at',
             'tip_rating',
-            'tip'
+            'tip',
+            'is_owner'
+
         ]
 
     def create(self, validated_data):
