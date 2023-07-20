@@ -6,6 +6,10 @@ from tips.models import Tip
 
 
 class Comment(models.Model):
+    """ 
+    Comment Model
+    Relates to Tip and User
+    """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     tip = models.ForeignKey(Tip, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

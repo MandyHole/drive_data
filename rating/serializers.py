@@ -4,6 +4,11 @@ from .models import Rating
 
 
 class RatingSerializer(serializers.ModelSerializer):
+    """ 
+    Serializer for Rating Model
+    Checks for ownership
+    Create method checks their is a unique relationship for tip/owner 
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
 

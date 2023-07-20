@@ -4,6 +4,10 @@ from .models import SavedTip
 
 
 class SavedTipSerializer(serializers.ModelSerializer):
+    """ 
+    Serializer for the Saved Tip Model
+    Create method ensures the user doesn't save a tip more than once
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:

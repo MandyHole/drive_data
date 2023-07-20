@@ -5,6 +5,9 @@ from tips.models import Tip
 
 # Create your models here.
 class SavedTip(models.Model):
+    """ 
+    Unique relationship between Owner/Tip
+    """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     tip = models.ForeignKey(

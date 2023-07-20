@@ -11,8 +11,22 @@ from rating.models import Rating
 from django.db.models import Avg, Count
 from saved_tips.models import SavedTip
 
+from django.db.models import F
+
 
 # Create your views here.
+
+class CustomOrderingFilter(filters.OrderingFilter):
+    def filter_queryset(self, request, queryset, view):
+        ordering = self.get_ordering(request, queryset, view)
+        def make_f_object(x):
+            return F(x[1:]).desc(nulls_last=True) if x[0] == '-' else F(x).asc(nulls_last=True)
+
+        if ordering:
+            ordering = map(make_f_object, ordering)
+            queryset = queryset.order_by(*ordering)
+
+        return queryset
 
 
 class TipList(generics.ListCreateAPIView):
@@ -25,7 +39,7 @@ class TipList(generics.ListCreateAPIView):
         number_times_saved=Count('author_saved_tip', distinct=True),
     ).order_by('-created_on')
     filter_backends = [
-        filters.OrderingFilter,
+        CustomOrderingFilter,
         filters.SearchFilter,
         DjangoFilterBackend,
         ]
