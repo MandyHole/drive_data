@@ -5,10 +5,14 @@ from rating.models import Rating
 
 
 class TipSerializer(serializers.ModelSerializer):
+    """
+    Serializier for Tip
+    Checks for ownership
+
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     owner_id = serializers.ReadOnlyField(source='owner.id')
-    owner_image = serializers.ReadOnlyField(source='owner.tipauthor.image.url')
     saved_tips_id = serializers.SerializerMethodField()
     average_rating = serializers.ReadOnlyField()
     number_times_saved = serializers.ReadOnlyField()

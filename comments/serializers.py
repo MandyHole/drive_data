@@ -4,7 +4,10 @@ from .models import Comment
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    """ 
+    """
+    Serializer for Comment Model
+    Gets natural time for when created/updated
+    Checks ownership
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()

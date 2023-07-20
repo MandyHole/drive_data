@@ -5,9 +5,8 @@ from django.contrib.auth.models import User
 
 
 class Tip(models.Model):
-    """ 
-    Tip Model, related to Owner. 
-    
+    """
+    Tip Model, related to Owner.
     """
     ABILITY_LEVEL = [
         ('beginner', 'Beginner+'),
@@ -28,7 +27,7 @@ class Tip(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     screenshot = models.ImageField(
         upload_to='GetDriveing/',
-        verbose_name="Upload a screenshot if applicable",
+        verbose_name="Upload a screenshot",
         blank=True)
     category = models.CharField(
         max_length=32,

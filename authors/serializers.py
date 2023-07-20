@@ -3,6 +3,10 @@ from .models import Author
 
 
 class AuthorSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Author Model
+    Checks if current user is owner
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     number_tips_created = serializers.ReadOnlyField()

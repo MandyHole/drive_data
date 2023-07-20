@@ -25,6 +25,7 @@ GetDriveing Github Repository (see that ReadMe for more details about this proje
 <li>pycodestyle authors</li>
 <li>pycodestyle comments</li>
 <li>pycodestyle drive_api</li>
+<li>pycodestyle rating</li>
 <li>pycodestyle saved_tips</li>
 <li>pycodestyle tips</li>
 </ul>

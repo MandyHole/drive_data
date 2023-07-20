@@ -6,6 +6,11 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Author(models.Model):
+    """
+    Author Model
+    One to One relationship with owner
+    Default image supplied
+    """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=True)
     bio = models.TextField(blank=True)

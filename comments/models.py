@@ -6,7 +6,7 @@ from tips.models import Tip
 
 
 class Comment(models.Model):
-    """ 
+    """
     Comment Model
     Relates to Tip and User
     """
