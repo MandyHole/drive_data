@@ -31,12 +31,14 @@ class TipList(generics.ListCreateAPIView):
         ]
     search_fields = [
         'title',
-        'tip_content'
+        'tip_content',
+        'ability',
+        'category'
+
     ]
     filterset_fields = [
         'owner__author',
         'author_saved_tip__owner__author',
-        'tip__rating_id__rating__owner'
         ]
     ordering_fields = [
         'average_rating',
