@@ -40,7 +40,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-mandyhole-drivedata-h35cbtf8dw4.ws-eu101.gitpod.io',
+    '8000-mandyhole-drivedata-h35cbtf8dw4.ws-eu102.gitpod.io',
     'localhost',
     os.environ.get('ALLOWED_HOST'),
     ]
