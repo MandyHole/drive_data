@@ -1,6 +1,6 @@
 ## Get Driveing API
 
-This is the accompanying database to go with my frontend website created with React (GetDriveing). GetDriveing pulls the json data from this django rest framework and manipulates it to provide CRUD functionality to the user.
+This is the accompanying database to go with my frontend website created with React (GetDriveing). GetDriveing pulls the json data from this django rest framework and manipulates it to provide the necessary CRUD, filter, sort and search functionality to the user.
 
 Get Driveing Frontend website screenshot:
 <img src="https://res.cloudinary.com/dd4cchm7g/image/upload/v1689887554/Screenshot_2023-07-20_at_22.12.20_slwv6q.png" width = 95% alt="Sample views of GetDriveing website"></a>
@@ -207,14 +207,13 @@ User story: As a developer using this backend database, I want to protect the ti
 <h2 id="code"> Code Testing </h2>
 <p id="python"><strong>Python:</strong> Tested the pages I created/used with Pycode Style (no errors found). See steps below:</p>
 <ul><li>In the terminal, check you have pycodestyle installed by running: pip install pycodestyle</li>
-<li>In the terminal, run pycodestyle *ADD RELATIVE FILE/FOLDER PATH HERE* for each of the pages you wish to check until no errors are found (see examples below). NB there were issues with line length in the automatically generated migration files and in env.py file.</li><ul>
+<li>In the terminal, run pycodestyle *ADD RELATIVE FILE/FOLDER PATH HERE* for each of the pages you wish to check until no errors are found (see examples below). NB there were issues with line length in the automatically generated migration files.</li><ul>
 <li>pycodestyle authors</li>
 <li>pycodestyle comments</li>
 <li>pycodestyle drive_api</li>
 <li>pycodestyle rating</li>
 <li>pycodestyle saved_tips</li>
 <li>pycodestyle tips</li>
-<li>pycodestyle env.py</li>
 </ul>
 </ul>
 
@@ -252,8 +251,8 @@ This project was deployed through Heroku (live link found here: <a href="https:/
 
 <h3 id="fork">How to fork this repo</h3>
 
-Visit the repo (https://github.com/MandyHole/school-clubs) and click the 'Fork' button in the top right part of the screen. You may need to sign in to Github.
+Visit the repo (https://github.com/MandyHole/drive_data) and click the 'Fork' button in the top right part of the screen. You may need to sign in to Github.
 
 <h3 id="clone">How to clone this repo</h3>
 
-Visit the repo (https://github.com/MandyHole/school-clubs) and click the green 'Code' button above the list of files. Click on the 'local' and select from the following options: HTTPS, SSH and GitHub CLI. Copy the link. Open the terminal in your code editor, ensuring the current working directory is where you want the files, and type git clone and paste in the copied URL before clicking enter.
+Visit the repo (https://github.com/MandyHole/drive_data) and click the green 'Code' button above the list of files. Click on the 'local' and select from the following options: HTTPS, SSH and GitHub CLI. Copy the link. Open the terminal in your code editor, ensuring the current working directory is where you want the files, and type git clone and paste in the copied URL before clicking enter.

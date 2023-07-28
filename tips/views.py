@@ -10,7 +10,6 @@ from drive_api.permissions import IsOwnerOrReadOnly
 from rating.models import Rating
 from django.db.models import Avg, Count
 from saved_tips.models import SavedTip
-
 from django.db.models import F
 
 
@@ -51,7 +50,6 @@ class TipList(generics.ListCreateAPIView):
         'tip_content',
         'ability',
         'category'
-
     ]
     filterset_fields = [
         'owner__author',
