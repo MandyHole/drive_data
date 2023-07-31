@@ -21,6 +21,9 @@ Link to Agile Planning Project Board for front-end user stories: https://github.
 <a href="#code" aria-label="Jump to Code Testing">Code Testing</a><br>
 <a href="#bugs" aria-label="Jump to Known Bugs">Known Bugs</a><br>
 <a href="#deploy" aria-label="Jump to Deployment & Local Development">Deployment & Local Development</a><br>
+<a href="#credits" aria-label="Jump to Credits">Credits</a><br>
+<a href="#info" aria-label="Jump to Credits">Further Information</a><br>
+
 
 
 
@@ -256,3 +259,13 @@ Visit the repo (https://github.com/MandyHole/drive_data) and click the 'Fork' bu
 <h3 id="clone">How to clone this repo</h3>
 
 Visit the repo (https://github.com/MandyHole/drive_data) and click the green 'Code' button above the list of files. Click on the 'local' and select from the following options: HTTPS, SSH and GitHub CLI. Copy the link. Open the terminal in your code editor, ensuring the current working directory is where you want the files, and type git clone and paste in the copied URL before clicking enter.
+
+<h2 id="credits">Credits</h2>
+
+Stack Overflow: https://stackoverflow.com/questions/59339485/django-rest-framework-ordering-set-the-location-of-none-values/59341084#59341084: to correctly order null values when sorting by average rating / number of saves.
+
+Code Institute: for providing the drf-api walkthrough project and the help the tutor team provided to help troubleshoot the above-mentioned issue. Also, for general inspiration and support from the programme and mentor.
+
+<h2 id="info">Further information</h2>
+
+For further information about how this api was used, please see the ReadMe for my GetDriveing Github Repository: <a href="https://github.com/MandyHole/getdriveing" target="new" aria-label=" GetDriveing GitHub Repository">https://github.com/MandyHole/getdriveing</a> 
